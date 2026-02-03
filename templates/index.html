@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition System | AI-Powered Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👁️</text></svg>">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation"></div>
+    <div class="particles"></div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo-container">
+                <div class="logo-icon">👁️</div>
+                <h1>Face Recognition</h1>
+            </div>
+            <p class="subtitle">Real-time AI-powered face detection and recognition system</p>
+        </header>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-item">
+                <span class="status-dot active"></span>
+                <span class="status-text">Camera Active</span>
+            </div>
+            <div class="status-item">
+                <span>🕐</span>
+                <span id="current-time">Loading...</span>
+            </div>
+            <div class="status-item">
+                <span>🤖</span>
+                <span>AI Processing</span>
+            </div>
+        </div>
+
+        <!-- Video Container -->
+        <div class="video-wrapper">
+            <div class="video-container">
+                <div class="video-inner">
+                    <!-- Loading Overlay -->
+                    <div class="loading-overlay">
+                        <div class="loader"></div>
+                        <p class="loading-text">Initializing camera...</p>
+                    </div>
+                    
+                    <!-- Video Feed -->
+                    <img src="{{ url_for('video_feed') }}" alt="Live Camera Feed" class="video-frame">
+                    
+                    <!-- Video Overlay Elements -->
+                    <div class="video-overlay">
+                        <div class="corner top-left"></div>
+                        <div class="corner top-right"></div>
+                        <div class="corner bottom-left"></div>
+                        <div class="corner bottom-right"></div>
+                        <div class="scanline"></div>
+                    </div>
+                    
+                    <!-- Recording Indicator -->
+                    <div class="recording-indicator">
+                        <div class="rec-dot"></div>
+                        <span class="rec-text">LIVE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="controls">
+            <button class="btn btn-primary" id="fullscreen-btn">
+                <span class="btn-icon">⛶</span>
+                <span>Fullscreen</span>
+            </button>
+            <button class="btn btn-secondary" id="screenshot-btn">
+                <span class="btn-icon">📷</span>
+                <span>Screenshot</span>
+            </button>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">👤</div>
+                <div class="stat-value" data-count="2">2</div>
+                <div class="stat-label">Known Faces</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-value">Real-time</div>
+                <div class="stat-label">Processing Speed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-value">High</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Face Recognition System &copy; 2026 | Built with ❤️ using Flask & OpenCV</p>
+            <p style="margin-top: 8px; font-size: 0.85rem;">
+                Press <kbd>F</kbd> for Fullscreen | <kbd>S</kbd> for Screenshot
+            </p>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
